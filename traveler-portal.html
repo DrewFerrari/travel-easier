@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveler Portal - Travel Easy Agency</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="travel_easier_logo.jpg" alt="Travel Easy Agency Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="visa-services.html" class="nav-link">Visa Services</a></li>
+                    <li><a href="travel-services.html" class="nav-link">Travel Services</a></li>
+                    <li><a href="payments.html" class="nav-link">Online Payments</a></li>
+                    <li><a href="our-team.html" class="nav-link">Our Team</a></li>
+                    <li><a href="traveler-portal.html" class="nav-link active">Traveler Portal</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Traveler Portal</h1>
+            <p>Submit your travel documents and connect with our expert agents for personalized assistance</p>
+        </div>
+    </section>
+
+    <!-- Portal Options -->
+    <section class="portal-options">
+        <div class="container">
+            <div class="options-grid">
+                <div class="option-card" onclick="showSection('contact-agent')">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Contact an Agent</h3>
+                    <p>Get personalized assistance from our expert travel consultants</p>
+                    <div class="option-features">
+                        <span><i class="fas fa-check"></i> Direct agent communication</span>
+                        <span><i class="fas fa-check"></i> Expert guidance</span>
+                        <span><i class="fas fa-check"></i> Quick response</span>
+                    </div>
+                    <button class="btn btn-primary">Contact Agent</button>
+                </div>
+
+                <div class="option-card" onclick="showSection('upload-docs')">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Upload Documents</h3>
+                    <p>Submit your travel documents for visa processing and travel arrangements</p>
+                    <div class="option-features">
+                        <span><i class="fas fa-check"></i> Secure upload</span>
+                        <span><i class="fas fa-check"></i> Multiple file types</span>
+                        <span><i class="fas fa-check"></i> Progress tracking</span>
+                    </div>
+                    <button class="btn btn-primary">Upload Documents</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Agent Section -->
+    <section id="contact-agent" class="portal-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Our Travel Experts</h2>
+                <p>Choose an agent and send your inquiry directly for personalized assistance</p>
+            </div>
+
+            <div class="agent-selection">
+                <h3>Select Your Preferred Agent</h3>
+                <div class="agent-grid">
+                    <div class="agent-select-card" onclick="selectAgent('Daniel Gwerenha', '0788362552')">
+                        <div class="agent-photo">
+                            <img src="daniel gwerenha.png" alt="Daniel Gwerenha">
+                        </div>
+                        <div class="agent-info">
+                            <h4>Daniel Gwerenha</h4>
+                            <p>Senior Travel Consultant</p>
+                            <div class="agent-status online">
+                                <i class="fas fa-circle"></i> Available
+                            </div>
+                        </div>
+                        <div class="agent-contact">
+                            <a href="tel:0788362552" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="https://wa.me/263788362552" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="agent-select-card" onclick="selectAgent('Takunda Mushavi', '0788828516')">
+                        <div class="agent-photo">
+                            <img src="takunda mashavi.png" alt="Takunda Mushavi">
+                        </div>
+                        <div class="agent-info">
+                            <h4>Takunda Mushavi</h4>
+                            <p>Travel Consultant</p>
+                            <div class="agent-status online">
+                                <i class="fas fa-circle"></i> Available
+                            </div>
+                        </div>
+                        <div class="agent-contact">
+                            <a href="tel:0788828516" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="https://wa.me/263788828516" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="agent-select-card" onclick="selectAgent('Gladwell', '0772825967')">
+                        <div class="agent-photo">
+                            <img src="gladwell.jpg" alt="Gladwell">
+                        </div>
+                        <div class="agent-info">
+                            <h4>Gladwell</h4>
+                            <p>Travel Consultant</p>
+                            <div class="agent-status online">
+                                <i class="fas fa-circle"></i> Available
+                            </div>
+                        </div>
+                        <div class="agent-contact">
+                            <a href="tel:0772825967" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="https://wa.me/263772825967" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="agent-select-card" onclick="selectAgent('Tasha', '0780109466')">
+                        <div class="agent-photo">
+                            <img src="tasha.png" alt="Tasha">
+                        </div>
+                        <div class="agent-info">
+                            <h4>Tasha</h4>
+                            <p>Travel Consultant</p>
+                            <div class="agent-status busy">
+                                <i class="fas fa-circle"></i> Busy
+                            </div>
+                        </div>
+                        <div class="agent-contact">
+                            <a href="tel:0780109466" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="https://wa.me/263780109466" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="agent-select-card" onclick="selectAgent('Russell T.C', '0784083826')">
+                        <div class="agent-photo">
+                            <img src="russel.png" alt="Russell T.C">
+                        </div>
+                        <div class="agent-info">
+                            <h4>Russell T.C</h4>
+                            <p>Visa Specialist</p>
+                            <div class="agent-status online">
+                                <i class="fas fa-circle"></i> Available
+                            </div>
+                        </div>
+                        <div class="agent-contact">
+                            <a href="tel:0784083826" class="contact-btn">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="https://wa.me/263784083826" target="_blank" class="contact-btn whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h3>Send Message to Agent</h3>
+                <form id="agent-contact-form" class="agent-contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full-name">Full Name *</label>
+                            <input type="text" id="full-name" name="full-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="travel-date">Travel Date</label>
+                            <input type="date" id="travel-date" name="travel-date">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="selected-agent">Select Agent *</label>
+                        <select id="selected-agent" name="selected-agent" required>
+                            <option value="">Choose an agent</option>
+                            <option value="Daniel Gwerenha">Daniel Gwerenha - Senior Travel Consultant</option>
+                            <option value="Takunda Mushavi">Takunda Mushavi - Travel Consultant</option>
+                            <option value="Gladwell">Gladwell - Travel Consultant</option>
+                            <option value="Tasha">Tasha - Travel Consultant</option>
+                            <option value="Russell T.C">Russell T.C - Visa Specialist</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service-type">Service Type *</label>
+                        <select id="service-type" name="service-type" required>
+                            <option value="">Select service type</option>
+                            <option value="visa-application">Visa Application</option>
+                            <option value="flight-booking">Flight Booking</option>
+                            <option value="hotel-booking">Hotel Booking</option>
+                            <option value="travel-package">Travel Package</option>
+                            <option value="consultation">Travel Consultation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input type="text" id="destination" name="destination"
+                            placeholder="e.g., United Kingdom, USA, South Africa">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Please describe your travel needs and any specific requirements..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="attachment">Attach Documents (Optional)</label>
+                        <div class="document-requirements">
+                            <h4><i class="fas fa-info-circle"></i> Required Documents for Visa Applications:</h4>
+                            <ul>
+                                <li><strong>Valid Passport:</strong> Clear copy of bio-data page (6 months validity)
+                                </li>
+                                <li><strong>Passport Photos:</strong> 2 recent white background photos (35x45mm)</li>
+                                <li><strong>ID Document:</strong> National ID or residence permit</li>
+                                <li><strong>Proof of Funds:</strong> Bank statements (last 3 months)</li>
+                                <li><strong>Travel Itinerary:</strong> Flight bookings and hotel reservations</li>
+                                <li><strong>Employment Letter:</strong> Company letter with salary details</li>
+                                <li><strong>Marriage Certificate:</strong> If traveling with spouse</li>
+                                <li><strong>Birth Certificates:</strong> For minors traveling</li>
+                            </ul>
+                        </div>
+                        <div class="file-upload">
+                            <input type="file" id="attachment" name="attachment" multiple
+                                accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                            <label for="attachment" class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Choose files or drag and drop</span>
+                                <small>PDF, DOC, DOCX, JPG, PNG (Max 10MB per file)</small>
+                            </label>
+                            <div id="file-list" class="file-list"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="clearForm()">
+                            <i class="fas fa-redo"></i> Clear Form
+                        </button>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="contact-terms" name="contact-terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a> and <a
+                                href="privacy-policy.html" target="_blank">Privacy Policy</a>.
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Documents Section -->
+    <section id="upload-docs" class="portal-section" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upload Travel Documents</h2>
+                <p>Submit your documents securely for visa processing and travel arrangements</p>
+            </div>
+
+            <!-- Document Upload Form -->
+            <div class="upload-container">
+                <form id="document-upload-form" class="document-upload-form">
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="doc-full-name">Full Name *</label>
+                                <input type="text" id="doc-full-name" name="doc-full-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="doc-email">Email Address *</label>
+                                <input type="email" id="doc-email" name="doc-email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="doc-phone">Phone Number *</label>
+                                <input type="tel" id="doc-phone" name="doc-phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="doc-dob">Date of Birth *</label>
+                                <input type="date" id="doc-dob" name="doc-dob" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Passport Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-passport"></i> Passport Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passport-number">Passport Number *</label>
+                                <input type="text" id="passport-number" name="passport-number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="passport-expiry">Passport Expiry Date *</label>
+                                <input type="date" id="passport-expiry" name="passport-expiry" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passport-issue">Passport Issue Date *</label>
+                                <input type="date" id="passport-issue" name="passport-issue" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="passport-country">Issuing Country *</label>
+                                <input type="text" id="passport-country" name="passport-country" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Document Uploads -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-file-upload"></i> Required Documents</h3>
+
+                        <!-- Passport Upload -->
+                        <div class="document-upload-item">
+                            <h4>Passport Copy *</h4>
+                            <div class="file-upload-area">
+                                <input type="file" id="passport-copy" name="passport-copy" accept=".pdf,.jpg,.jpeg,.png"
+                                    required>
+                                <label for="passport-copy" class="file-upload-area-label">
+                                    <i class="fas fa-passport"></i>
+                                    <span>Upload Passport Copy</span>
+                                    <small>Clear scan of passport bio page (PDF, JPG, PNG)</small>
+                                </label>
+                                <div class="upload-preview" id="passport-preview"></div>
+                            </div>
+                        </div>
+
+                        <!-- Passport Photo Upload -->
+                        <div class="document-upload-item">
+                            <h4>Passport-sized Photograph *</h4>
+                            <div class="file-upload-area">
+                                <input type="file" id="passport-photo" name="passport-photo" accept=".jpg,.jpeg,.png"
+                                    required>
+                                <label for="passport-photo" class="file-upload-area-label">
+                                    <i class="fas fa-camera"></i>
+                                    <span>Upload Passport Photo</span>
+                                    <small>Recent passport-sized photo (JPG, PNG - 2x2 inches)</small>
+                                </label>
+                                <div class="upload-preview" id="photo-preview"></div>
+                            </div>
+                        </div>
+
+                        <!-- Accommodation Upload -->
+                        <div class="document-upload-item">
+                            <h4>Accommodation Details</h4>
+                            <div class="file-upload-area">
+                                <input type="file" id="accommodation" name="accommodation"
+                                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                                <label for="accommodation" class="file-upload-area-label">
+                                    <i class="fas fa-hotel"></i>
+                                    <span>Upload Accommodation Details</span>
+                                    <small>Hotel booking confirmation or accommodation proof (Optional)</small>
+                                </label>
+                                <div class="upload-preview" id="accommodation-preview"></div>
+                            </div>
+                        </div>
+
+                        <!-- Flight Upload -->
+                        <div class="document-upload-item">
+                            <h4>Flight Details</h4>
+                            <div class="file-upload-area">
+                                <input type="file" id="flight-details" name="flight-details"
+                                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                                <label for="flight-details" class="file-upload-area-label">
+                                    <i class="fas fa-plane"></i>
+                                    <span>Upload Flight Details</span>
+                                    <small>Flight booking confirmation or itinerary (Optional)</small>
+                                </label>
+                                <div class="upload-preview" id="flight-preview"></div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Documents -->
+                        <div class="document-upload-item">
+                            <h4>Additional Documents</h4>
+                            <div class="file-upload-area">
+                                <input type="file" id="additional-docs" name="additional-docs" multiple
+                                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                                <label for="additional-docs" class="file-upload-area-label">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>Upload Additional Documents</span>
+                                    <small>Any other supporting documents (Optional)</small>
+                                </label>
+                                <div class="upload-preview" id="additional-preview"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Travel Details -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-plane-departure"></i> Travel Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="destination-country">Destination Country *</label>
+                                <input type="text" id="destination-country" name="destination-country" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="departure-date">Departure Date *</label>
+                                <input type="date" id="departure-date" name="departure-date" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="return-date">Return Date</label>
+                                <input type="date" id="return-date" name="return-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="travel-purpose">Purpose of Travel *</label>
+                                <select id="travel-purpose" name="travel-purpose" required>
+                                    <option value="">Select purpose</option>
+                                    <option value="tourism">Tourism</option>
+                                    <option value="business">Business</option>
+                                    <option value="education">Education</option>
+                                    <option value="medical">Medical</option>
+                                    <option value="family">Family Visit</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Information -->
+                    <div class="form-section">
+                        <h3><i class="fas fa-info-circle"></i> Additional Information</h3>
+                        <div class="form-group">
+                            <label for="special-requirements">Special Requirements or Notes</label>
+                            <textarea id="special-requirements" name="special-requirements" rows="4"
+                                placeholder="Any special requirements, medical conditions, or additional information..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Submit -->
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms-accepted" name="terms-accepted" required>
+                                <span class="checkmark"></span>
+                                I confirm that all information provided is accurate and I have the right to submit these
+                                documents for visa processing purposes. I agree to the <a href="terms-conditions.html"
+                                    target="_blank">Terms & Conditions</a> and <a href="privacy-policy.html"
+                                    target="_blank">Privacy Policy</a>.
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-cloud-upload-alt"></i> Submit Documents
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="clearUploadForm()">
+                                <i class="fas fa-redo"></i> Clear Form
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Tracking -->
+    <section class="progress-tracking" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Application Progress</h2>
+                <p>Track the status of your visa application and document processing</p>
+            </div>
+
+            <div class="tracking-container">
+                <div class="application-id-input">
+                    <label for="application-id">Enter Application ID:</label>
+                    <div class="input-group">
+                        <input type="text" id="application-id" placeholder="e.g., VISA-2024-001234">
+                        <button onclick="trackApplication()" class="btn btn-primary">Track</button>
+                    </div>
+                </div>
+
+                <div id="tracking-result" class="tracking-result" style="display: none;">
+                    <div class="progress-timeline">
+                        <div class="progress-step completed">
+                            <div class="step-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Documents Submitted</h4>
+                                <p>Your documents have been successfully received</p>
+                                <span class="step-date">2024-01-15 10:30 AM</span>
+                            </div>
+                        </div>
+
+                        <div class="progress-step completed">
+                            <div class="step-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Document Verification</h4>
+                                <p>Documents have been verified and are complete</p>
+                                <span class="step-date">2024-01-15 2:45 PM</span>
+                            </div>
+                        </div>
+
+                        <div class="progress-step active">
+                            <div class="step-icon">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Visa Processing</h4>
+                                <p>Your application is currently being processed</p>
+                                <span class="step-date">In Progress</span>
+                            </div>
+                        </div>
+
+                        <div class="progress-step">
+                            <div class="step-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Decision</h4>
+                                <p>Awaiting decision from immigration authorities</p>
+                                <span class="step-date">Pending</span>
+                            </div>
+                        </div>
+
+                        <div class="progress-step">
+                            <div class="step-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="step-content">
+                                <h4>Result Notification</h4>
+                                <p>You will be notified of the decision</p>
+                                <span class="step-date">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tracking-info">
+                        <div class="info-card">
+                            <h4>Application Details</h4>
+                            <p><strong>Application ID:</strong> VISA-2024-001234</p>
+                            <p><strong>Applicant:</strong> John Doe</p>
+                            <p><strong>Destination:</strong> United Kingdom</p>
+                            <p><strong>Submitted:</strong> January 15, 2024</p>
+                        </div>
+                        <div class="info-card">
+                            <h4>Estimated Timeline</h4>
+                            <p><strong>Processing Time:</strong> 15-20 working days</p>
+                            <p><strong>Expected Decision:</strong> February 8, 2024</p>
+                            <p><strong>Current Status:</strong> Under Review</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/263784083826" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Travel Easy Agency</h3>
+                    <p>Your trusted partner for professional visa and travel services.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="visa-services.html">Visa Services</a></li>
+                        <li><a href="travel-services.html">Travel Services</a></li>
+                        <li><a href="our-team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +263 78 408 3826</p>
+                    <p><i class="fas fa-envelope"></i> info@travelesasy.co.zw</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 1574 Alpes Road, Hatcliffe Extension, Harare</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Travel Easy Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Portal specific JavaScript
+        let selectedAgentName = '';
+        let selectedAgentPhone = '';
+
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.portal-section').forEach(sec => {
+                sec.style.display = 'none';
+            });
+
+            // Hide progress tracking
+            document.querySelector('.progress-tracking').style.display = 'none';
+
+            // Show selected section
+            document.getElementById(section).style.display = 'block';
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function selectAgent(name, phone) {
+            selectedAgentName = name;
+            selectedAgentPhone = phone;
+            document.getElementById('selected-agent').value = name;
+
+            // Highlight selected agent
+            document.querySelectorAll('.agent-select-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+        }
+
+        function clearForm() {
+            document.getElementById('agent-contact-form').reset();
+            document.getElementById('selected-agent').value = '';
+            document.querySelectorAll('.agent-select-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+        }
+
+        function clearUploadForm() {
+            document.getElementById('document-upload-form').reset();
+            document.querySelectorAll('.upload-preview').forEach(preview => {
+                preview.innerHTML = '';
+            });
+        }
+
+        function trackApplication() {
+            const appId = document.getElementById('application-id').value;
+            if (appId) {
+                document.getElementById('tracking-result').style.display = 'block';
+                // Show progress tracking section
+                document.querySelector('.progress-tracking').style.display = 'block';
+                // Hide other sections
+                document.querySelectorAll('.portal-section').forEach(sec => {
+                    sec.style.display = 'none';
+                });
+            }
+        }
+
+        // File upload handling
+        document.querySelectorAll('input[type="file"]').forEach(input => {
+            input.addEventListener('change', function (e) {
+                const files = e.target.files;
+                const previewId = this.id.replace('-', '-preview');
+                const preview = document.getElementById(previewId);
+
+                if (preview) {
+                    preview.innerHTML = '';
+                    for (let file of files) {
+                        const fileItem = document.createElement('div');
+                        fileItem.className = 'file-item';
+                        fileItem.innerHTML = `
+                            <i class="fas fa-file"></i>
+                            <span>${file.name}</span>
+                            <small>(${(file.size / 1024 / 1024).toFixed(2)} MB)</small>
+                            <button type="button" onclick="this.parentElement.remove()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        `;
+                        preview.appendChild(fileItem);
+                    }
+                }
+            });
+        });
+
+        // Form submissions - Send to Russell T.C via WhatsApp
+        document.getElementById('agent-contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const fullName = document.getElementById('full-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const travelDate = document.getElementById('travel-date').value;
+            const selectedAgent = document.getElementById('selected-agent').value;
+            const serviceType = document.getElementById('service-type').value;
+            const destination = document.getElementById('destination').value;
+            const message = document.getElementById('message').value;
+            const termsAccepted = document.getElementById('contact-terms').checked;
+
+            // Validate terms checkbox
+            if (!termsAccepted) {
+                alert('Please accept the Terms & Conditions and Privacy Policy to continue.');
+                return;
+            }
+
+            // Get attached files
+            const fileInput = document.getElementById('attachment');
+            const files = fileInput.files;
+            let fileNames = '';
+
+            if (files.length > 0) {
+                fileNames = '\n\n📎 *Attached Documents:*\n';
+                for (let i = 0; i < files.length; i++) {
+                    fileNames += `${i + 1}. ${files[i].name} (${(files[i].size / 1024 / 1024).toFixed(2)} MB)\n`;
+                }
+            }
+
+            // Format service type
+            const serviceText = serviceType ? serviceType.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()) : 'Not specified';
+
+            // Create WhatsApp message for Russell T.C
+            const whatsappMessage = `🌟 *NEW TRAVEL PORTAL INQUIRY* 🌟
+
+*Client Information:*
+• Name: ${fullName}
+• Email: ${email}
+• Phone: ${phone}
+• Travel Date: ${travelDate || 'Not specified'}
+
+*Service Details:*
+• Selected Agent: ${selectedAgent}
+• Service Type: ${serviceText}
+• Destination: ${destination || 'Not specified'}
+
+*Message:*
+${message}${fileNames}
+
+---
+*Sent via Travel Easy Agency Portal*
+*Please contact client ASAP*`;
+
+            // Russell T.C's WhatsApp number
+            const russellWhatsApp = '263784083826';
+
+            // Create WhatsApp URL
+            const whatsappUrl = `https://wa.me/${russellWhatsApp}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+
+            // Show success message
+            alert('Thank you for your inquiry! You will be redirected to WhatsApp to send your message directly to Russell T.C. He will contact you shortly.');
+
+            // Reset form
+            this.reset();
+            document.getElementById('file-list').innerHTML = '';
+        });
+
+        document.getElementById('document-upload-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            showNotification('Documents uploaded successfully! Your application ID is VISA-2024-' + Math.floor(Math.random() * 1000000), 'success');
+            this.reset();
+            document.querySelectorAll('.upload-preview').forEach(preview => {
+                preview.innerHTML = '';
+            });
+        });
+    </script>
+</body>
+
+</html>
