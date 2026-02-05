@@ -1,18 +1,29 @@
 // Travel Easy Agency - JavaScript Functions
 
 // Mobile Navigation Toggle
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
 
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
         });
@@ -36,9 +47,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Contact Form Handling
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         // Get form data
         const formData = new FormData(this);
         const formObject = {};
@@ -68,7 +79,7 @@ if (contactForm) {
 
         // Simulate form submission
         showNotification('Sending message...', 'info');
-        
+
         setTimeout(() => {
             showNotification('Message sent successfully! We will contact you soon.', 'success');
             contactForm.reset();
@@ -106,7 +117,7 @@ function showNotification(message, type = 'info') {
     `;
 
     // Set background color based on type
-    switch(type) {
+    switch (type) {
         case 'success':
             notification.style.backgroundColor = '#28a745';
             break;
@@ -141,7 +152,7 @@ function showNotification(message, type = 'info') {
 
 // Phone Number Formatting
 document.querySelectorAll('input[type="tel"]').forEach(input => {
-    input.addEventListener('input', function(e) {
+    input.addEventListener('input', function (e) {
         let value = e.target.value.replace(/\D/g, '');
         if (value.length > 10) {
             value = value.slice(0, 10);
@@ -152,10 +163,10 @@ document.querySelectorAll('input[type="tel"]').forEach(input => {
 
 // WhatsApp Click Tracking
 document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         // Track WhatsApp clicks (you can integrate with analytics here)
         console.log('WhatsApp clicked:', this.href);
-        
+
         // Optional: Add confirmation dialog
         const agentName = this.closest('.team-card, .agent-contact-card')?.querySelector('h3, h4')?.textContent;
         if (agentName) {
@@ -166,10 +177,10 @@ document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
 
 // Call Button Click Tracking
 document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         // Track call clicks (you can integrate with analytics here)
         console.log('Call clicked:', this.href);
-        
+
         // Optional: Add confirmation dialog
         const agentName = this.closest('.team-card, .agent-contact-card')?.querySelector('h3, h4')?.textContent;
         if (agentName) {
@@ -181,11 +192,11 @@ document.querySelectorAll('a[href^="tel:"]').forEach(link => {
 // Scroll Animations
 function animateOnScroll() {
     const elements = document.querySelectorAll('.team-card, .service-card, .testimonial-card, .agent-contact-card');
-    
+
     elements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         const elementBottom = element.getBoundingClientRect().bottom;
-        
+
         if (elementTop < window.innerHeight && elementBottom > 0) {
             element.style.opacity = '1';
             element.style.transform = 'translateY(0)';
@@ -194,7 +205,7 @@ function animateOnScroll() {
 }
 
 // Set initial state for animated elements
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const elements = document.querySelectorAll('.team-card, .service-card, .testimonial-card, .agent-contact-card');
     elements.forEach(element => {
         element.style.opacity = '0';
@@ -211,9 +222,9 @@ window.addEventListener('resize', animateOnScroll);
 animateOnScroll();
 
 // Lazy Loading for Images (if you add real images later)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const images = document.querySelectorAll('img[data-src]');
-    
+
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -231,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Copy phone number functionality
 document.querySelectorAll('.phone-number').forEach(phoneElement => {
     phoneElement.style.cursor = 'pointer';
-    phoneElement.addEventListener('click', function() {
+    phoneElement.addEventListener('click', function () {
         const phoneNumber = this.textContent.replace(/[^\d]/g, '');
         navigator.clipboard.writeText(phoneNumber).then(() => {
             showNotification('Phone number copied to clipboard!', 'success');
@@ -246,7 +257,7 @@ function updateAgentAvailability() {
     const agents = document.querySelectorAll('.agent-contact-card, .team-card');
     const currentHour = new Date().getHours();
     const businessHours = currentHour >= 8 && currentHour <= 17;
-    
+
     agents.forEach(agent => {
         const statusIndicator = document.createElement('div');
         statusIndicator.className = 'availability-status';
@@ -259,7 +270,7 @@ function updateAgentAvailability() {
             display: inline-block;
             animation: pulse 2s infinite;
         `;
-        
+
         const agentName = agent.querySelector('h3, h4');
         if (agentName && !agentName.querySelector('.availability-status')) {
             agentName.appendChild(statusIndicator);
@@ -312,10 +323,10 @@ setInterval(updateAgentAvailability, 60000);
 // Service selection form enhancement
 const serviceSelect = document.getElementById('service');
 if (serviceSelect) {
-    serviceSelect.addEventListener('change', function() {
+    serviceSelect.addEventListener('change', function () {
         const messageTextarea = document.getElementById('message');
         const selectedService = this.value;
-        
+
         if (selectedService && messageTextarea) {
             const serviceMessages = {
                 'visa': 'I am interested in applying for a visa. Please provide information about the requirements and processing time.',
@@ -323,33 +334,33 @@ if (serviceSelect) {
                 'consultation': 'I need a consultation to discuss my travel plans and visa requirements.',
                 'other': 'I have a general inquiry about your services.'
             };
-            
+
             if (!messageTextarea.value || messageTextarea.value === serviceMessages[serviceSelect.dataset.previousService])) {
-                messageTextarea.value = serviceMessages[selectedService] || '';
-            }
-            
-            serviceSelect.dataset.previousService = selectedService;
-        }
+        messageTextarea.value = serviceMessages[selectedService] || '';
+    }
+
+    serviceSelect.dataset.previousService = selectedService;
+}
     });
 }
 
 // Form field focus effects
 document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(field => {
-    field.addEventListener('focus', function() {
+    field.addEventListener('focus', function () {
         this.parentElement.style.transform = 'scale(1.02)';
         this.parentElement.style.transition = 'transform 0.2s ease';
     });
-    
-    field.addEventListener('blur', function() {
+
+    field.addEventListener('blur', function () {
         this.parentElement.style.transform = 'scale(1)';
     });
 });
 
 // Page load animations
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.5s ease';
-    
+
     setTimeout(() => {
         document.body.style.opacity = '1';
     }, 100);

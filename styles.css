@@ -4026,6 +4026,7 @@ body::before {
         transition: 0.3s;
         box-shadow: var(--shadow-lg);
         padding: var(--spacing-md) 0;
+        z-index: 999;
     }
 
     .nav-menu.active {
@@ -4034,6 +4035,8 @@ body::before {
 
     .hamburger {
         display: flex;
+        z-index: 1000;
+        padding: 5px; /* Increase touch target */
     }
 
     .hamburger.active .bar:nth-child(2) {
