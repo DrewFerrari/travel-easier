@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visa Services - Travel Easy Agency</title>
+    <link rel="icon" type="image/jpeg" href="travel_easier_logo.jpg">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="chatbot.css">
 </head>
 
 <body>
@@ -30,11 +32,11 @@
                     <li><a href="traveler-portal.html" class="nav-link">Traveler Portal</a></li>
                     <li><a href="contact.html" class="nav-link">Contact Us</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
@@ -170,6 +172,116 @@
         </div>
     </section>
 
+    <!-- Visa Service Packages -->
+    <section class="visa-packages">
+        <div class="container">
+            <h2>Visa Service Packages</h2>
+            <div class="packages-grid">
+                <!-- Standard Package -->
+                <div class="package-card standard">
+                    <div class="package-header">
+                        <h3>Standard Package</h3>
+                        <div class="package-badge">Most Popular</div>
+                    </div>
+                    <div class="package-price">
+                        <span class="price">Affordable</span>
+                        <span class="time">2 Working Days</span>
+                    </div>
+                    <div class="package-features">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Visa comes out within 2 working days</li>
+                            <li><i class="fas fa-check"></i> Document verification</li>
+                            <li><i class="fas fa-check"></i> Application form filling</li>
+                            <li><i class="fas fa-check"></i> Basic consultation</li>
+                            <li><i class="fas fa-check"></i> Email support</li>
+                            <li><i class="fas fa-times"></i> Embassy booking</li>
+                            <li><i class="fas fa-times"></i> Application tracking</li>
+                        </ul>
+                    </div>
+                    <div class="package-action">
+                        <a href="contact.html?package=standard" class="btn btn-outline">Choose Standard</a>
+                    </div>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="package-card premium">
+                    <div class="package-header">
+                        <h3>Premium Package</h3>
+                        <div class="package-badge">Express Service</div>
+                    </div>
+                    <div class="package-price">
+                        <span class="price">Premium</span>
+                        <span class="time">4 Hours</span>
+                    </div>
+                    <div class="package-features">
+                        <h4>What's Included:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Visa out in 4 hours</li>
+                            <li><i class="fas fa-check"></i> Priority document processing</li>
+                            <li><i class="fas fa-check"></i> Express application submission</li>
+                            <li><i class="fas fa-check"></i> Dedicated consultant</li>
+                            <li><i class="fas fa-check"></i> 24/7 phone support</li>
+                            <li><i class="fas fa-check"></i> Embassy visit included</li>
+                            <li><i class="fas fa-check"></i> Real-time application tracking</li>
+                            <li><i class="fas fa-check"></i> Urgent processing</li>
+                            <li><i class="fas fa-check"></i> Document pickup & delivery</li>
+                        </ul>
+                    </div>
+                    <div class="package-action">
+                        <a href="contact.html?package=premium" class="btn btn-primary">Choose Premium</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Package Comparison -->
+            <div class="package-comparison">
+                <h3>Package Comparison</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Standard</th>
+                            <th>Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Processing Time</td>
+                            <td>2 Working Days</td>
+                            <td>4 Hours</td>
+                        </tr>
+                        <tr>
+                            <td>Application Tracking</td>
+                            <td><i class="fas fa-times text-red"></i></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Embassy Booking</td>
+                            <td><i class="fas fa-times text-red"></i></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Embassy Visit</td>
+                            <td><i class="fas fa-times text-red"></i></td>
+                            <td><i class="fas fa-check text-green"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Support Level</td>
+                            <td>Email Support</td>
+                            <td>24/7 Phone Support</td>
+                        </tr>
+                        <tr>
+                            <td>Document Service</td>
+                            <td>Basic Verification</td>
+                            <td>Pickup & Delivery</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
     <!-- Popular Destinations -->
     <section class="popular-destinations">
         <div class="container">
@@ -193,7 +305,7 @@
                     <div class="destination-flag">🇹🇭</div>
                     <h3>Thailand</h3>
                     <p>Tourist & Medical Visas</p>
-                    <div class="destination-price">$300</div>
+                    <div class="destination-price">$200</div>
                     <a href="contact.html" class="destination-link">Inquire Now</a>
                 </div>
                 <div class="destination-card">
@@ -375,6 +487,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="chatbot.js"></script>
 </body>
 
 </html>

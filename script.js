@@ -5,35 +5,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
-    // Event delegation for hamburger menu interactions
-    document.addEventListener('click', function (e) {
-        // Handle hamburger click
-        const hamburgerBtn = e.target.closest('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        const hamburgerIcon = document.querySelector('.hamburger');
-
-        if (hamburgerBtn && navMenu) {
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
-            if (hamburgerIcon) hamburgerIcon.classList.toggle('active');
+            hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
             console.log('Mobile menu toggled');
-        }
-
-        // Handle clicking outside to close
-        if (navMenu && navMenu.classList.contains('active') && !e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
-            navMenu.classList.remove('active');
-            if (hamburgerIcon) hamburgerIcon.classList.remove('active');
-        }
-    });
-
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', function () {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
         });
-    });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        navMenu.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function () {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
 });
 
 // Smooth Scrolling for Anchor Links
@@ -341,12 +337,12 @@ if (serviceSelect) {
                 'other': 'I have a general inquiry about your services.'
             };
 
-            if (!messageTextarea.value || messageTextarea.value === serviceMessages[serviceSelect.dataset.previousService])) {
-        messageTextarea.value = serviceMessages[selectedService] || '';
-    }
+            if (!messageTextarea.value || messageTextarea.value === serviceMessages[serviceSelect.dataset.previousService]) {
+                messageTextarea.value = serviceMessages[selectedService] || '';
+            }
 
-    serviceSelect.dataset.previousService = selectedService;
-}
+            serviceSelect.dataset.previousService = selectedService;
+        }
     });
 }
 
